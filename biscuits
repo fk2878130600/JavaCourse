@@ -1,0 +1,29 @@
+package HomeWork01;
+
+public class biscuits {
+	public static void main(String[] args) {
+		java.util.Scanner s = new java.util.Scanner(System.in);
+		
+		int BiscuitsBoxs;
+		int BiscuitsContainer;
+		int BiscuitsYushu;
+		int BoxsYushu;
+		
+		System.out.print("请输入饼干数量:");
+		int BiscuitsNumber = s.nextInt();
+		
+		BiscuitsBoxs = BiscuitsNumber / 24;
+		BiscuitsYushu = BiscuitsNumber % 24;
+		
+		if( BiscuitsBoxs < 75) {
+			System.out.println("需要" + BiscuitsBoxs + "个盒子");
+			System.out.println("需要丢弃" + BiscuitsYushu + "个饼干");
+		}else {
+			BiscuitsContainer = BiscuitsBoxs / 75;
+			BoxsYushu = BiscuitsBoxs % 75;
+			System.out.println("需要" + BiscuitsContainer + "个容器");
+			System.out.println("需要" + BoxsYushu + "个盒子");
+			System.out.println("需要丢弃" + BiscuitsYushu + "个饼干");
+		}
+	}
+}

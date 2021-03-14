@@ -1,0 +1,24 @@
+package HomeWork02;
+
+public class NarcissisticNumber {
+	public static void main(String[] args){
+		java.util.Scanner s = new java.util.Scanner(System.in);
+		
+		System.out.print("请输入水仙花数的位数:");
+		int Number = s.nextInt();
+		
+		for(int i = (int)Math.pow(10, Number-1);i < (int)Math.pow(10, Number);i++){
+			int sum = 0;
+			for(int j = 0;j < Number;j++)
+			{
+				int m = i;
+				m = (int)(m / Math.pow(10, j));
+				m = m%10;
+				sum = (int)( sum + Math.pow(m, Number) );
+			}
+			if(sum == i)
+				System.out.println(i);
+		}
+		
+	}
+}

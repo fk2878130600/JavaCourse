@@ -1,0 +1,119 @@
+package HomeWork03;
+
+import java.util.Arrays;
+
+public class StudentGrade {
+		public static double score[];
+		
+		public static void main(String[] args){
+			java.util.Scanner s = new java.util.Scanner(System.in);
+			
+			int choose = menu();
+			while(choose != 6){
+				switch(choose){
+					case 1:input();break;
+					case 2:ClassAverage();break;
+					case 3:HighestGrade();break;
+					case 4:LowestGrade();break;
+					case 5:SortGrade();break;
+					default:System.out.println("输入错误！！！重新选择！！！");
+				}
+				choose = menu();
+			}
+			
+			System.out.println("谢谢使用，再见！");
+		}
+		
+		public static int menu(){
+			java.util.Scanner s = new java.util.Scanner(System.in);
+			
+			System.out.println("======Student Grade======");
+			System.out.println("  1. Enter Student Results	");
+			System.out.println("  2. Class Average	");
+			System.out.println("  3. Highest Grade	");
+			System.out.println("  4. Lowest Grade	");
+			System.out.println("  5. Sort Grade	");
+			System.out.println("  6. Exit	");
+			System.out.print("please input your choose(1-6):");
+			
+			int choose = s.nextInt();	
+			return choose;
+		}
+		
+		public static void input(){
+			java.util.Scanner s = new java.util.Scanner(System.in);
+			score = new double[5];
+			for(int i = 0;i < score.length;i++){
+				System.out.print("请输入第" + (i+1) + "学生成绩：");
+				score[i] = s.nextDouble();
+				boolean ok = false;
+				while(!ok){
+					if(score[i] < 0 || score[i] > 100){
+						System.out.println("输入失败请重新输入！");
+						score[i] = s.nextDouble();
+					}else{
+						ok = true;
+					}
+				}
+			}
+			System.out.println("输入成功！");
+		}
+		
+		public static double ClassAverage(){
+			if(score == null){
+				System.out.println("请先进行功能1 ！！！");
+				return 0;
+			}
+			double sum = 0;
+			for(int i = 0;i < score.length;i++)
+			{
+				sum += score[i];
+			}
+			double average = sum / (score.length);
+			System.out.println("班级平均成绩为:" + average);
+			return average;
+		}
+		
+		public static double HighestGrade(){
+			if(score == null){
+				System.out.println("请先进行功能1 ！！！");
+				return 0;
+			}
+			double value = score[0];
+			for(int i = 1;i < score.length;i++)
+			{
+				if(value < score[i])
+					value = score[i];
+			}
+			System.out.println("班级最高分为:" + value);
+			return value;
+		}
+		
+		public static double LowestGrade(){
+			if(score == null){
+				System.out.println("请先进行功能1 ！！！");
+				return 0;
+			}
+			double value = score[0];
+			for(int i = 1;i < score.length;i++)
+			{
+				if(value > score[i])
+					value = score[i];
+			}
+			System.out.println("班级最低分为:" + value);
+			return value;
+		}
+
+		public static void SortGrade(){
+			if(score == null){
+				System.out.println("请先进行功能1 ！！！");
+				return ;
+			}
+			System.out.println("从小到大:");	
+			Arrays.sort(score);
+			for(int i = 0;i < score.length;i++)
+			{
+				System.out.print(score[i] + " ");				
+			}
+		}
+}

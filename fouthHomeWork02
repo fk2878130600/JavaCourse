@@ -1,0 +1,33 @@
+package HomeWork04;
+
+public class Dog {
+	public String name;
+	public String colour;
+	public int age;
+	
+	public Dog(String name,String colour,int age) {
+		this.name = name;
+		this.colour = colour;
+		this.age = age;
+	}
+	
+	public void displayDog() {
+		System.out.println("狗的名字：" + this.name);
+		System.out.println("狗的颜色：" + this.colour);
+		System.out.println("狗的年龄：" + this.age);
+	}
+}
+
+package HomeWork04;
+
+public class Dogdriver {
+	public static void main(String[] args) {
+		Dog d1 = new Dog("小梁","黄色",1);
+		Dog d2 = new Dog("小鑫","蓝色",2);
+		Dog d3 = new Dog("小奇","白色",3);
+		
+		d1.displayDog();
+		d2.displayDog();
+		d3.displayDog();
+	}
+}

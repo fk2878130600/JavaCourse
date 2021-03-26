@@ -1,0 +1,37 @@
+package HomeWork04;
+
+public class Address {
+	public String country;
+	public String capital;
+	public String city;
+	public String street;
+	public String Postcodecomposition;
+	
+	public Address(String country,String capital,String city,String street,String Postcode) {
+		this.country = country;
+		this.capital = capital;
+		this.city = city;
+		this.street = street;
+		this.Postcodecomposition = Postcode;
+	}
+	
+	public void Addressdisplay() {
+		System.out.println("国家：" + this.country);
+		System.out.println("省份：" + this.capital);
+		System.out.println("城市：" + this.city);
+		System.out.println("街道：" + this.street);
+		System.out.println("邮编组成:" + this.Postcodecomposition);
+	}
+}
+
+package HomeWork04;
+
+public class Addressdriver {
+	public static void main(String[] args) {
+		Address ad1 = new Address("中国","湖北省","武汉市","庙山街道","10010");
+		Address ad2 = new Address("中国","湖南省","长沙市","xx街道","10011");
+		
+		ad1.Addressdisplay();
+		ad2.Addressdisplay();
+	}
+}

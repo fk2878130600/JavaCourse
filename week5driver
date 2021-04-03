@@ -1,0 +1,77 @@
+package HomeWork05;
+
+public class Driver {
+	public static int choose;
+	public static ClassList List;
+	public static int m;
+	public static void main(String[] args){
+		
+		choose = menu();
+		
+		while(choose != 3){
+			switch(choose){
+				case 1:CreateList();break;
+				case 2:PrintList();break;
+				default:System.out.println("invaid choose!");
+			}
+			choose = menu();
+		}
+		System.out.println("Bye");
+	}
+	
+	public static int menu(){
+		java.util.Scanner s = new java.util.Scanner(System.in);
+		choose = 0;
+		System.out.println("1、create Attendance List");
+		System.out.println("2、 print Attendance List");
+		System.out.println("3、 Exit");
+		
+		System.out.println("请输入选择:");
+		choose = s.nextInt();
+		return choose;
+	}
+	
+	public static void CreateList(){
+		java.util.Scanner s = new java.util.Scanner(System.in);
+		System.out.println("请输入课程代码：");
+		String subID = s.next();
+		System.out.println("请输入课程名称：");
+		String subname = s.next();
+		
+		System.out.println("请输入课程学期：");
+		int semster = s.nextInt();
+		System.out.println("请输入课程学年：");
+		int year = s.nextInt();
+		
+		System.out.println("请输入学生1的学号：");
+		String s1ID = s.next();
+		System.out.println("请输入学生1的姓：");
+		String s1firstname = s.next();
+		System.out.println("请输入学生1的名：");
+		String s1lastname = s.next();
+		
+		System.out.println("请输入学生2的学号：");
+		String s2ID = s.next();
+		System.out.println("请输入学生2的姓：");
+		String s2firstname = s.next();
+		System.out.println("请输入学生2的名：");
+		String s2lastname = s.next();
+		
+		Subject sub1 = new Subject(subID,subname);
+		Student s1 = new Student(s1ID,s1firstname,s1lastname);
+		Student s2 = new Student(s2ID,s2firstname,s2lastname);
+		
+		List = new ClassList(semster,year,sub1,s1,s2);
+		
+		m = 1;
+	}
+	
+	public static void PrintList(){
+		if(m != 1){
+			System.out.println("请先完成1！重新选择:");
+			return;
+		}
+		String msg = List.toString();
+		System.out.println(msg);
+	}
+}

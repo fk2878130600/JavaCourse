@@ -1,0 +1,34 @@
+package HomeWork05;
+
+public class Subject {
+	private String subjectID;
+	private String subjectname;
+	
+	public Subject(String subjectID,String subjectname){
+		this.subjectID = subjectID;
+		this.subjectname = subjectname;
+	}
+
+	public String getSubjectID() {
+		return subjectID;
+	}
+
+	public void setSubjectID(String subjectID) {
+		this.subjectID = subjectID;
+	}
+
+	public String getSubjectname() {
+		return subjectname;
+	}
+
+	public void setSubjectname(String subjectname) {
+		this.subjectname = subjectname;
+	}
+
+	@Override
+	public String toString() {
+		return "Subject [subjectID=" + subjectID + ", subjectname=" + subjectname + "]";
+	}
+	
+	
+}
